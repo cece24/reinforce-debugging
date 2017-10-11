@@ -1,10 +1,22 @@
 def select_cards(possible_cards, hand)
 
-  possible_cards.each do |current_card|
-    print "Do you want to pick up #{current_card}?"
-    answer = gets.chomp
-    if answer.downcase == 'y' && hand.length < 3
-      hand << current_card
+  has_three = false
+
+  while has_three == false
+    possible_cards.each do |current_card|
+      print "Do you want to pick up #{current_card}?"
+      answer = gets.chomp
+      if answer.downcase == 'y'
+        hand << current_card
+      end
+
+      if hand.length == 3
+        break
+      end
+    end
+
+    if hand.length == 3
+      has_three = true
     end
   end
 
