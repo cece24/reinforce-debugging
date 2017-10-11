@@ -11,12 +11,9 @@ def select_cards(possible_cards, hand)
       end
 
       if hand.length == 3
+        has_three = true
         break
       end
-    end
-
-    if hand.length == 3
-      has_three = true
     end
   end
 
